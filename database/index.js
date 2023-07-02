@@ -1,6 +1,4 @@
-const Sequelize = require('sequelize') ;
-const database = require('../config/database.js') ;
-const Produtos = require('../models/produtos.js') ;
+const Sequelize = require('sequelize');
 
 
 const conection = new Sequelize('bdsitedoces','root', '@lotus25', 
@@ -9,14 +7,8 @@ const conection = new Sequelize('bdsitedoces','root', '@lotus25',
     );
 
 
-//Produtos.init(conection);
-//Produtos(conection);
+
 module.exports = conection;
-/*
-try{
-    conection.authenticate();
-    console.log('Conecção estabelecida com sucesso.');
-}catch(error){
-    console.error('Conecção não estabelecida:', error);
-}*/
-/*conection.close();*/
+
+
+
