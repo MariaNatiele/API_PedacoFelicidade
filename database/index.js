@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 
-const conection = new Sequelize('bdsitedoces','root', '@lotus25', 
+const conection = new Sequelize('bdWebSite','root', '@lotus25', 
     { dialect:'mysql', 
     host:'localhost'}
     );
