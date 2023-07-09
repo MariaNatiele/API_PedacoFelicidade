@@ -26,12 +26,11 @@ const Cadastro = database.define('cadastros',{
            confirmarSenha: {
                type: Sequelize.STRING,
                allowNull: false
-        }
-        
-    
-            
-            
-       
-})
+        },
+        online:{
+            type:Sequelize.BOOLEAN,
+            allowNull: false
+          }
+});
 
 module.exports = Cadastro;

@@ -2,6 +2,40 @@ const Cadastros  = require('../models/cadastros.js');
 
 module.exports =  {
 
+    async login(req, res) {
+        const { email,senha, online } = req.body;
+       
+        const user = await Usuarios.findOne({ where: { email } });
+    
+        if (!user) {
+            return res.status(400).send({
+                status: 0,
+                message: 'E-mail ou senha incorreto! 1 IF  ',
+                user: {}
+            });
+        }
+        /*
+        const senhaChecada = await bcrypt.compare(senha, user.senha);
+        if (!senhaChecada) {
+        return res.status(400).send({
+            status: 0,
+            message: 'E-mail ou senha incorreto! 2 IF',
+            user: {}
+        });
+
+        }*/
+        
+        const user_id = user.id;
+        
+        await Usuarios.update({
+            online
+        }, {
+            where: {
+                id: user_id
+            }
+        });
+
+        },
        
         async index(req, res){
             const cadastro = await Cadastros.findAll();

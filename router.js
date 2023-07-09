@@ -17,11 +17,13 @@ router.get('/car',CarrinhoController.index );
 router.post('/car',CarrinhoController.store );
 router.put('/car/:car_id',CarrinhoController.update );
 router.delete('/car/:car_id',CarrinhoController.delete);
-/*
+
+
 //usuario
-router.post('/usuarios/login',UsuariosController.login);
-router.get('/usuarios/login',UsuariosController.index);
-*/
+//post insere dados
+router.post('/cadastros/login',CadastrosController.login);
+//router.get('/usuarios/login',UsuariosController.index);
+
 
 //cadastros
 router.get('/cadastros',CadastrosController.index );
