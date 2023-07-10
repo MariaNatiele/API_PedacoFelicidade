@@ -15,8 +15,9 @@ module.exports =  {
                 status:1,
                 message: 'Carrinho com dados cadastrado ', car})
             },
-    
+            
             async update(req, res){
+                const carro = await Carrinho.findAll();
                 const {nome, preco, quantidade} = req.body;
                 const {car_id} = req.params;
                 await Carrinho.update({
@@ -25,12 +26,15 @@ module.exports =  {
             });
             return res.status(200).send({
                 status:1,
-                message: 'Carrinho atualizado '});
+                message: 'Carrinho atualizado ',
+                carro: {carro}
+                });
     
             },
     
             async delete(req, res){
                 const {car_id} = req.params;
+               
                 await Carrinho.destroy({
                     where:{
                         id:car_id
